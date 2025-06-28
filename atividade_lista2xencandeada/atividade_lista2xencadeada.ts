@@ -24,7 +24,9 @@ class Lista2xEncadeada{
         this.elementos.pop(); 
     }
 
-    escolherOndeRemover(numero: number, posicao: number){}
+    escolherOndeRemover(posicao: number){
+        
+    }
 
     exibirLista(){
         for(let i=0; i<this.elementos.length; i++){
@@ -33,7 +35,8 @@ class Lista2xEncadeada{
     }
 
     exibirListaInvertida(){
-
+        let listaInvertida = this.elementos.reverse(); 
+        console.log("Lista invertida: " + listaInvertida); 
     }
 
     estaVazia(){
@@ -61,4 +64,4 @@ a.inserirNoFinal(10);
 a.estaVazia(); 
 a.exibirTamanhoLista(); 
 a.exibirLista(); 
-  
+a.exibirListaInvertida(); 
