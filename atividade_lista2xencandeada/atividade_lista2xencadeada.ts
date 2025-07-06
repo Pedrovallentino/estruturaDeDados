@@ -14,7 +14,12 @@ class Lista2xEncadeada{
         this.elementos.push(numero); 
     }
 
-    escolherOndeInserir(numero: number, posicao: number){}
+    escolherOndeInserir(numero: number, posicao: number): number[]{
+        if(posicao >= 0 && posicao < this.elementos.length){
+            this.elementos.splice(posicao, 0, numero); 
+        }
+        return this.elementos; 
+    }
 
     removerDoinicio(){
         this.elementos.shift(); 
@@ -24,8 +29,11 @@ class Lista2xEncadeada{
         this.elementos.pop(); 
     }
 
-    escolherOndeRemover(posicao: number){
-        
+    escolherOndeRemover(posicao: number): number[]{
+        if(posicao >= 0 && posicao < this.elementos.length){
+            this.elementos.splice(posicao, 1); 
+        }
+        return this.elementos; 
     }
 
     exibirLista(){
@@ -60,8 +68,13 @@ const a = new Lista2xEncadeada();
 a.inserirNoInicio(1); 
 a.inserirNoInicio(4);
 a.inserirNoFinal(10); 
+a.inserirNoInicio(7); 
+a.inserirNoFinal(14); 
 
-a.estaVazia(); 
-a.exibirTamanhoLista(); 
 a.exibirLista(); 
-a.exibirListaInvertida(); 
+
+a.escolherOndeInserir(999, 0); 
+a.escolherOndeInserir(1849, 3); 
+a.escolherOndeInserir(2014, 6); 
+
+a.exibirLista(); 
